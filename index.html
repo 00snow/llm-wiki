@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM 學習 Wiki</title>
+  <meta name="description" content="由 AI 協助維護、互相連結的 LLM 基礎知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="開啟目錄" aria-expanded="false">☰</button>
+    <a class="brand" href="#/home"><span class="brand-mark">W</span>LLM 學習 Wiki</a>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand brand-side" href="#/home"><span class="brand-mark">W</span>LLM 學習 Wiki</a>
+      <label class="search">
+        <span class="visually-hidden">搜尋</span>
+        <input id="search" type="search" placeholder="搜尋標題、內容、標籤…" autocomplete="off">
+      </label>
+      <nav id="nav" aria-label="頁面目錄"></nav>
+    </aside>
+
+    <main class="content" id="content" tabindex="-1">
+      <p class="muted">載入中…</p>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
