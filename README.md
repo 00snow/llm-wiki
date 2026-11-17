@@ -1,13 +1,22 @@
-# LLM 學習 Wiki
+# AI 入門講解 Wiki
 
-一個由 AI 協助維護的「大型語言模型基礎知識」個人知識庫，採用 **LLM Wiki** 的做法：
+🌸 網站：<https://00snow.github.io/llm-wiki/>
 
-- `raw/`：我自己的上課筆記（原始資料）
-- `wiki/`：AI 依照規則整理出來、互相連結的 Markdown 頁面
-- `CLAUDE.md` / `AGENTS.md`：給 AI 看的專案規則——AI 讀完就知道怎麼繼續擴充這個 wiki
+一個參考 [Karpathy 的 LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 做法、由 AI 維護的知識庫。
+主題是「走向 LLM 研究之前要先懂的 AI 基礎」，寫成可以講給初學者聽的講義：
 
-網站是純靜態的單頁應用，瀏覽器直接把 `wiki/` 中的 Markdown 渲染成網頁，
-支援 `[[wiki 連結]]`、反向連結、全文搜尋與深色模式。
+01 什麼是 AI → 02 神經網路 → 03 損失函數 → 04 最佳化 → 05 卷積 → 06 CNN
+
+## 結構
+
+| 層 | 位置 | 說明 |
+|----|------|------|
+| 原始資料 | `raw/` | 從維基百科、Stanford CS231n、Google ML 速成課程剪輯的重點，附原始網址 |
+| 知識庫 | `wiki/` | AI 整理的講解頁（`concepts/`）與來源摘要（`sources/`），目錄 `index.md`、紀錄 `log.md` |
+| 規則 | `AGENTS.md` | 給 AI 看的規則；`CLAUDE.md` 直接匯入它 |
+
+網站是純靜態單頁應用（`index.html` + `assets/`），在瀏覽器把 Markdown 渲染成韓系風網頁，
+支援 `[[wiki 連結]]`、反向連結、學習路線、上一頁 / 下一頁、搜尋與深色模式。
 
 ## 本機預覽
 
@@ -15,14 +24,12 @@
 python -m http.server 8000
 ```
 
-然後開啟 <http://localhost:8000>。
+開啟 <http://localhost:8000>。
 
-## 新增內容
+## 怎麼繼續擴充
 
-1. 把新筆記放進 `raw/`，檔名 `YYYY-MM-DD-描述.md`
-2. 對 AI 說：「把 `raw/新檔名.md` 收進 wiki」
-3. AI 會依 `CLAUDE.md` 建立來源頁與概念頁、更新 `wiki/pages.json` 和 `wiki/log.md`
+- 收錄新資料：「幫我找反向傳播的資料收進 wiki」或「收錄 raw/xxx.md」
+- 提問：「MSE 和 MAE 什麼時候該用哪個？」——好的回答可以存回 wiki
+- 健康檢查：「檢查 wiki」
 
-## 部署
-
-推送到 GitHub 後，在 **Settings → Pages** 選擇 `main` 分支的根目錄即可。
+AI 會依 `AGENTS.md` 的規則建立頁面、更新 `wiki/index.md`，並在 `wiki/log.md` 留紀錄。
