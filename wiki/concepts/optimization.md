@@ -2,7 +2,7 @@
 title: 最佳化與梯度下降（Optimization & Gradient Descent）
 type: concept
 tags: [訓練, 數學]
-sources: 1
+sources: 2
 updated: 2026-11-17
 ---
 
@@ -117,14 +117,15 @@ w 在 3 的兩邊跳來跳去，而且越跳越遠，損失越來越大 ❌
 - 梯度下降：看斜率 → 往下坡走一小步 → 重複。
 - `新參數 = 舊參數 − 學習率 × 斜率`
 - 學習率太小太慢、太大會爆；實務上用小批次 SGD。
-- 神經網路有很多層，計算每個參數的斜率需要用到「反向傳播（Backpropagation）」（待查證：之後收錄來源再補一頁）。
+- 神經網路有很多層、很多參數，每個參數的斜率要靠 [[backpropagation]] 一次算出來。
 
 ## 接下來讀什麼
 
-- [[convolution]]：學會怎麼訓練之後，來看處理圖片的關鍵運算。
+- [[backpropagation]]：神經網路有幾百萬個參數，斜率要怎麼一次算完？
 - [[loss-function]]：回顧我們在「往下走」的那座山是什麼。
 - [[neural-network]]：回顧要被調整的參數在哪裡。
 
 ## 來源
 
 - [[src-google-gradient-descent]]
+- [[src-cs231n-backprop]]

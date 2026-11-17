@@ -2,6 +2,13 @@
 
 > 新的紀錄寫在最上面，不刪舊紀錄。查最近 5 筆：`grep "^## \[" wiki/log.md | head -5`
 
+## [2026-11-17] ingest | Stanford CS231n：反向傳播
+- 起因：上次 lint 發現 [[optimization]] 的「反向傳播」標著（待查證），依 `AGENTS.md` 7.1 找來源補上
+- 新增：`raw/2026-11-17-cs231n-反向傳播.md`、[[src-cs231n-backprop]]、[[backpropagation]]（排在學習路線第 05 頁）
+- 更新：[[optimization]]（移除待查證、改連到反向傳播、來源 +1）、[[neural-network]]（「接下來讀什麼」加入反向傳播）
+- 更新：[[index|目錄]]、[[home|首頁]]的主題關係圖
+- 剩下的資料缺口：分類用的「交叉熵」損失（[[loss-function]]）
+
 ## [2026-11-17] lint | 建站後第一次檢查
 - 6 個概念頁、7 個來源頁都已列入 [[index|目錄]]
 - 沒有壞連結、沒有孤兒頁
