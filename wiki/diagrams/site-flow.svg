@@ -1,0 +1,23 @@
+<svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="網站運作原理">
+  <defs><marker id="h-st" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker></defs>
+  <rect x="40" y="40" width="190" height="56" rx="14" class="d-gray"/>
+  <text x="135" y="58" text-anchor="middle" dominant-baseline="central" class="d-b">wiki/index.md</text>
+  <text x="135" y="78" text-anchor="middle" dominant-baseline="central" class="d-sub">目錄：有哪些頁、順序</text>
+  <rect x="40" y="120" width="190" height="56" rx="14" class="d-gray"/>
+  <text x="135" y="138" text-anchor="middle" dominant-baseline="central" class="d-b">wiki/concepts/*.md</text>
+  <text x="135" y="158" text-anchor="middle" dominant-baseline="central" class="d-sub">內容：文字、表格、圖</text>
+  <rect x="40" y="200" width="190" height="56" rx="14" class="d-gray"/>
+  <text x="135" y="218" text-anchor="middle" dominant-baseline="central" class="d-b">assets/style.css</text>
+  <text x="135" y="238" text-anchor="middle" dominant-baseline="central" class="d-sub">外觀：韓系風配色</text>
+  <line x1="230" y1="68" x2="288" y2="128" class="d-line" marker-end="url(#h-st)"/>
+  <line x1="230" y1="148" x2="288" y2="148" class="d-line" marker-end="url(#h-st)"/>
+  <line x1="230" y1="228" x2="288" y2="168" class="d-line" marker-end="url(#h-st)"/>
+  <rect x="290" y="110" width="150" height="76" rx="16" class="d-sage"/>
+  <text x="365" y="138" text-anchor="middle" dominant-baseline="central" class="d-b">assets/app.js</text>
+  <text x="365" y="158" text-anchor="middle" dominant-baseline="central" class="d-sub">在瀏覽器裡組裝</text>
+  <line x1="440" y1="148" x2="498" y2="148" class="d-line" marker-end="url(#h-st)"/>
+  <rect x="500" y="110" width="140" height="76" rx="16" class="d-rose"/>
+  <text x="570" y="138" text-anchor="middle" dominant-baseline="central" class="d-b">你看到的網頁</text>
+  <text x="570" y="158" text-anchor="middle" dominant-baseline="central" class="d-sub">側欄、連結、反向連結</text>
+  <text x="340" y="285" text-anchor="middle" class="d-sub">新增內容只要改左邊的文字檔，app.js 不用動</text>
+</svg>

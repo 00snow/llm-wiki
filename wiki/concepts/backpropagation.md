@@ -3,7 +3,7 @@ title: 反向傳播（Backpropagation）
 type: concept
 tags: [訓練, 數學]
 sources: 1
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 反向傳播（Backpropagation）
@@ -63,6 +63,8 @@ df/dx = (df/dq) × (dq/dx)
 ## 動手算一次
 
 算式：`f = (x + y) × z`，輸入 x = −2、y = 5、z = −4。
+
+![先看整張圖：上半部從左往右算值，下半部從右往左傳梯度](diagrams/backprop.svg)
 
 先把它拆成兩站：
 

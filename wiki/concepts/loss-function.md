@@ -3,7 +3,7 @@ title: 損失函數（Loss Function）
 type: concept
 tags: [訓練, 數學]
 sources: 1
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 損失函數（Loss Function）
@@ -87,6 +87,8 @@ MSE = (1² + 0² + (−2)²) / 3 = 5 / 3 ≈ 1.67
 ```
 
 MSE 比 MAE 大，是因為第 3 筆的誤差 2 被平方成 4。
+
+![同樣三筆誤差，取絕對值和取平方的差別](diagrams/loss.svg)
 
 ### 例 3：哪個模型比較好？
 

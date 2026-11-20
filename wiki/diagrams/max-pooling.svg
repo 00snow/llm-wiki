@@ -1,0 +1,50 @@
+<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2×2 最大池化">
+  <defs><marker id="h-pl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker></defs>
+  <text x="140" y="45" text-anchor="middle" class="d-b">輸入 4×4</text>
+  <rect x="60" y="60" width="40" height="40" class="d-rose"/>
+  <text x="80" y="80" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="100" y="60" width="40" height="40" class="d-rose"/>
+  <text x="120" y="80" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="140" y="60" width="40" height="40" class="d-sage"/>
+  <text x="160" y="80" text-anchor="middle" dominant-baseline="central" class="d-b">2</text>
+  <rect x="180" y="60" width="40" height="40" class="d-sage"/>
+  <text x="200" y="80" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="60" y="100" width="40" height="40" class="d-rose"/>
+  <text x="80" y="120" text-anchor="middle" dominant-baseline="central">5</text>
+  <rect x="100" y="100" width="40" height="40" class="d-rose"/>
+  <text x="120" y="120" text-anchor="middle" dominant-baseline="central" class="d-b">6</text>
+  <rect x="140" y="100" width="40" height="40" class="d-sage"/>
+  <text x="160" y="120" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="180" y="100" width="40" height="40" class="d-sage"/>
+  <text x="200" y="120" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="60" y="140" width="40" height="40" class="d-sage"/>
+  <text x="80" y="160" text-anchor="middle" dominant-baseline="central" class="d-b">2</text>
+  <rect x="100" y="140" width="40" height="40" class="d-sage"/>
+  <text x="120" y="160" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="140" y="140" width="40" height="40" class="d-rose"/>
+  <text x="160" y="160" text-anchor="middle" dominant-baseline="central">3</text>
+  <rect x="180" y="140" width="40" height="40" class="d-rose"/>
+  <text x="200" y="160" text-anchor="middle" dominant-baseline="central">4</text>
+  <rect x="60" y="180" width="40" height="40" class="d-sage"/>
+  <text x="80" y="200" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="100" y="180" width="40" height="40" class="d-sage"/>
+  <text x="120" y="200" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="140" y="180" width="40" height="40" class="d-rose"/>
+  <text x="160" y="200" text-anchor="middle" dominant-baseline="central" class="d-b">8</text>
+  <rect x="180" y="180" width="40" height="40" class="d-rose"/>
+  <text x="200" y="200" text-anchor="middle" dominant-baseline="central">2</text>
+  <line x1="232" y1="140" x2="368" y2="140" class="d-line" marker-end="url(#h-pl)"/>
+  <text x="300" y="127" text-anchor="middle" class="d-sub">每個 2×2 只留最大值</text>
+  <text x="420" y="85" text-anchor="middle" class="d-b">輸出 2×2</text>
+  <rect x="380" y="100" width="40" height="40" class="d-rose"/>
+  <text x="400" y="120" text-anchor="middle" dominant-baseline="central" class="d-b">6</text>
+  <rect x="420" y="100" width="40" height="40" class="d-sage"/>
+  <text x="440" y="120" text-anchor="middle" dominant-baseline="central" class="d-b">2</text>
+  <rect x="380" y="140" width="40" height="40" class="d-sage"/>
+  <text x="400" y="160" text-anchor="middle" dominant-baseline="central" class="d-b">2</text>
+  <rect x="420" y="140" width="40" height="40" class="d-rose"/>
+  <text x="440" y="160" text-anchor="middle" dominant-baseline="central" class="d-b">8</text>
+  <text x="490" y="115" class="d-sub">寬、高都減半</text>
+  <text x="490" y="140" class="d-sub">丟掉 75% 的數字</text>
+  <text x="490" y="165" class="d-sub">留下最明顯的特徵</text>
+</svg>

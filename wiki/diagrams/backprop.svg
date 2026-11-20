@@ -1,0 +1,49 @@
+<svg viewBox="0 0 680 510" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="反向傳播：f = (x + y) × z 的正向與反向計算">
+  <defs><marker id="h-bp-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-sage"/></marker><marker id="h-bp-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker></defs>
+  <text x="40" y="28" class="d-b d-t-sage">① 正向傳播：從左往右，算出每一站的值</text>
+  <rect x="40" y="50" width="110" height="40" rx="10" class="d-gray"/>
+  <text x="95" y="70" text-anchor="middle" dominant-baseline="central" class="">x = −2</text>
+  <rect x="40" y="120" width="110" height="40" rx="10" class="d-gray"/>
+  <text x="95" y="140" text-anchor="middle" dominant-baseline="central" class="">y = 5</text>
+  <rect x="40" y="190" width="110" height="40" rx="10" class="d-gray"/>
+  <text x="95" y="210" text-anchor="middle" dominant-baseline="central" class="">z = −4</text>
+  <rect x="200" y="75" width="130" height="50" rx="12" class="d-sage"/>
+  <text x="265" y="90" text-anchor="middle" dominant-baseline="central" class="d-b">加法 +</text>
+  <text x="265" y="110" text-anchor="middle" dominant-baseline="central" class="d-sub">q = −2 + 5 = 3</text>
+  <rect x="380" y="130" width="130" height="50" rx="12" class="d-sage"/>
+  <text x="445" y="145" text-anchor="middle" dominant-baseline="central" class="d-b">乘法 ×</text>
+  <text x="445" y="165" text-anchor="middle" dominant-baseline="central" class="d-sub">3 × (−4)</text>
+  <rect x="550" y="130" width="90" height="50" rx="12" class="d-sage"/>
+  <text x="595" y="155" text-anchor="middle" dominant-baseline="central" class="d-b">f = −12</text>
+  <line x1="150" y1="70" x2="198" y2="92" class="d-line-sage" marker-end="url(#h-bp-s)"/>
+  <line x1="150" y1="140" x2="198" y2="112" class="d-line-sage" marker-end="url(#h-bp-s)"/>
+  <line x1="330" y1="100" x2="378" y2="145" class="d-line-sage" marker-end="url(#h-bp-s)"/>
+  <line x1="150" y1="210" x2="378" y2="165" class="d-line-sage" marker-end="url(#h-bp-s)"/>
+  <line x1="510" y1="155" x2="548" y2="155" class="d-line-sage" marker-end="url(#h-bp-s)"/>
+  <text x="40" y="278" class="d-b d-t-rose">② 反向傳播：從右往左，把梯度一站一站傳回去</text>
+  <rect x="40" y="300" width="110" height="40" rx="10" class="d-rose"/>
+  <text x="95" y="320" text-anchor="middle" dominant-baseline="central" class="d-b">dx = −4</text>
+  <rect x="40" y="370" width="110" height="40" rx="10" class="d-rose"/>
+  <text x="95" y="390" text-anchor="middle" dominant-baseline="central" class="d-b">dy = −4</text>
+  <rect x="40" y="440" width="110" height="40" rx="10" class="d-rose"/>
+  <text x="95" y="460" text-anchor="middle" dominant-baseline="central" class="d-b">dz = 3</text>
+  <rect x="200" y="325" width="130" height="50" rx="12" class="d-gray"/>
+  <text x="265" y="340" text-anchor="middle" dominant-baseline="central" class="d-b">加法 +</text>
+  <text x="265" y="360" text-anchor="middle" dominant-baseline="central" class="d-sub">原封不動分出去</text>
+  <rect x="380" y="380" width="130" height="50" rx="12" class="d-gray"/>
+  <text x="445" y="395" text-anchor="middle" dominant-baseline="central" class="d-b">乘法 ×</text>
+  <text x="445" y="415" text-anchor="middle" dominant-baseline="central" class="d-sub">交叉換位</text>
+  <rect x="550" y="380" width="90" height="50" rx="12" class="d-gray"/>
+  <text x="595" y="395" text-anchor="middle" dominant-baseline="central" class="d-b">起點</text>
+  <text x="595" y="415" text-anchor="middle" dominant-baseline="central" class="d-sub">梯度 = 1</text>
+  <line x1="548" y1="405" x2="512" y2="405" class="d-line-rose" marker-end="url(#h-bp-r)"/>
+  <text x="530" y="394" text-anchor="middle" class="d-sub d-t-rose">1</text>
+  <line x1="378" y1="395" x2="332" y2="352" class="d-line-rose" marker-end="url(#h-bp-r)"/>
+  <text x="364" y="350" class="d-sub d-t-rose">−4（= z）</text>
+  <line x1="378" y1="415" x2="152" y2="460" class="d-line-rose" marker-end="url(#h-bp-r)"/>
+  <text x="265" y="474" text-anchor="middle" class="d-sub d-t-rose">3（= q）</text>
+  <line x1="198" y1="342" x2="152" y2="320" class="d-line-rose" marker-end="url(#h-bp-r)"/>
+  <text x="178" y="314" class="d-sub d-t-rose">−4</text>
+  <line x1="198" y1="362" x2="152" y2="390" class="d-line-rose" marker-end="url(#h-bp-r)"/>
+  <text x="180" y="398" class="d-sub d-t-rose">−4</text>
+</svg>

@@ -2,6 +2,13 @@
 
 > 新的紀錄寫在最上面，不刪舊紀錄。查最近 5 筆：`grep "^## \[" wiki/log.md | head -5`
 
+## [2026-11-20] update | 「動手算一次」加上講解圖
+- 起因：讀者希望「用圖看懂怎麼算」
+- 新增 `wiki/diagrams/` 7 張 SVG：[[neural-network]]（一個神經元）、[[loss-function]]（MAE vs MSE）、[[optimization]]（學習率 0.1 vs 1.1）、[[backpropagation]]（正向 / 反向）、[[convolution]]（找邊緣）、[[cnn]]（最大池化）、[[home|首頁]]（網站運作原理）
+- 圖上數字全部和頁面內文一致，沒有新增事實，因此不需要新的 raw
+- 網站：`app.js` 會把 `![](diagrams/*.svg)` 嵌進頁面，`style.css` 新增 diagrams 配色 class，深色模式會自動換色
+- 規則：`AGENTS.md` 新增 5.4「講解圖」，ingest 流程也要求新概念頁配一張圖；log 動作新增 `update`
+
 ## [2026-11-17] ingest | Stanford CS231n：反向傳播
 - 起因：上次 lint 發現 [[optimization]] 的「反向傳播」標著（待查證），依 `AGENTS.md` 7.1 找來源補上
 - 新增：`raw/2026-11-17-cs231n-反向傳播.md`、[[src-cs231n-backprop]]、[[backpropagation]]（排在學習路線第 05 頁）

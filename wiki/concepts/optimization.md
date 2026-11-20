@@ -3,7 +3,7 @@ title: 最佳化與梯度下降（Optimization & Gradient Descent）
 type: concept
 tags: [訓練, 數學]
 sources: 2
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 最佳化與梯度下降（Optimization & Gradient Descent）
@@ -104,6 +104,8 @@ updated: 2026-11-17
 | 2 | 6.6 − 1.1 × 7.2 = −1.32 | 18.66 |
 
 w 在 3 的兩邊跳來跳去，而且越跳越遠，損失越來越大 ❌
+
+![把上面兩個表格畫在同一條損失曲線上：綠色每步都更靠近谷底，粉色虛線越跳越高](diagrams/gradient-descent.svg)
 
 ## 常見誤會
 

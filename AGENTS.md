@@ -46,7 +46,7 @@ RAG 每次提問都重新從原始文件找答案；LLM Wiki 則是讓 AI **事�
 ├── .nojekyll
 ├── assets/
 │   ├── style.css          ← 韓系風樣式
-│   └── app.js             ← 讀 wiki/index.md、渲染 Markdown、[[連結]]、反向連結、搜尋
+│   └── app.js             ← 讀 wiki/index.md、渲染 Markdown、[[連結]]、嵌入 SVG 圖、反向連結、搜尋
 ├── raw/                   ← 原始資料（不可修改）
 │   ├── assets/            ← 原始資料用到的圖片
 │   └── YYYY-MM-DD-來源-主題.md
@@ -54,6 +54,8 @@ RAG 每次提問都重新從原始文件找答案；LLM Wiki 則是讓 AI **事�
     ├── index.md           ← ★ 目錄：每一頁一行（網站靠它運作）
     ├── log.md             ← ★ 維護紀錄（只往上加，不刪）
     ├── overview.md        ← 首頁：學習路線與本站說明
+    ├── diagrams/          ← 講解用的 SVG 圖（見 5.4）
+    │   └── <主題>.svg
     ├── concepts/          ← 概念講解頁（一個概念一頁）
     │   └── <slug>.md
     └── sources/           ← 來源摘要頁（一份 raw 對應一頁）
@@ -148,6 +150,30 @@ updated: 2026-11-17
 7. 每個概念頁至少連到 **2 個**其他頁；`#` 只用一次，內文從 `##` 開始。
 8. 不寫行內 HTML 樣式；外觀一律交給 `assets/style.css`。
 
+### 5.4 講解圖（`wiki/diagrams/*.svg`）
+
+「動手算一次」盡量配一張圖，讓讀者**看圖就能跟著算**。
+
+- **放哪裡**：`wiki/diagrams/<主題>.svg`，檔名用小寫英文 + 連字號，例如 `backprop.svg`。
+- **怎麼插入**：在 Markdown 裡寫 `![圖說](diagrams/xxx.svg)`。圖說會顯示在圖的下方，要寫成一句完整的話。
+  網站會把 SVG 直接嵌進頁面，所以圖的顏色會跟著淺色 / 深色模式改變。
+- **畫法**：
+  - `viewBox` 寬度固定 680，高度依內容決定；不要設定 `width` / `height` 屬性。
+  - **不可寫死顏色**（不用 `fill="#..."`、`style="..."`），只能用 `style.css` 定義的 class：
+
+    | 用途 | class |
+    |------|-------|
+    | 方框 | `d-box`（白）、`d-gray`、`d-rose`（重點）、`d-sage`（正確 / 正向）、`d-butter`（輸入 / 參數）、`d-ink`（深色格） |
+    | 文字 | 預設 14px；`d-sub`（12px 灰）、`d-b`（粗體）、`d-t-rose`、`d-t-sage`、`d-t-inv`（深色格上的字） |
+    | 線條 | `d-line`、`d-line-rose`、`d-line-sage`，虛線再加 `d-dash`；框選用 `d-win` |
+    | 箭頭 | `<marker>` 裡的 path 用 `d-head`、`d-head-rose`、`d-head-sage` |
+    | 圓點 | `d-dot-rose`、`d-dot-sage` |
+
+  - 每個 `<marker>` 的 `id` 要加上檔案專屬前綴（例如 `h-bp-s`），避免同一頁多張圖時互相衝突。
+  - 圖上的數字必須和頁面內文的計算**完全一致**，也要追得回 `raw/`。
+  - 字不要壓在線上；同一張圖最多 3 種顏色，顏色要有意義（例如綠 = 正向 / 正確、粉 = 反向 / 重點）。
+- 要加新的 class 時，先加在 `assets/style.css` 的 diagrams 區塊，再回來更新這張表。
+
 ---
 
 ## 6. 特殊檔案
@@ -177,7 +203,7 @@ updated: 2026-11-17
 - 更新：[[optimization]]（補上損失曲線）
 ```
 
-動作只用：`setup`、`ingest`、`query`、`lint`。
+動作只用：`setup`、`ingest`、`query`、`lint`、`update`（改善既有頁面，例如加圖、改寫說明）。
 
 ---
 
@@ -189,6 +215,7 @@ updated: 2026-11-17
 2. 讀 raw 檔，先跟使用者**簡短報告重點**，再動手寫。
 3. 建立來源頁 `wiki/sources/src-*.md`。
 4. 更新或新建相關概念頁；一份來源通常會動到好幾頁。在概念頁的「來源」補上這份來源頁。
+   新的概念頁在「動手算一次」依 5.4 畫一張講解圖。
 5. 補齊雙向的 `[[ ]]` 連結。
 6. 更新 `wiki/index.md`，在 `wiki/log.md` 最上方加紀錄。
 
@@ -223,6 +250,7 @@ updated: 2026-11-17
 - 顏色只能用 `assets/style.css` 裡 `:root` 定義的 CSS 變數。
 - 版面：左側欄（搜尋 + 目錄）、右側內文、文末自動產生「反向連結」；手機寬度時側欄收合成選單。
 - 要改網站功能時，**先跟使用者說明要改什麼**再動手。
+- 改了 `style.css` 或 `app.js`，要把 `index.html` 裡的 `?v=日期` 改成當天日期，避免瀏覽器用到舊的快取。
 
 ### 本機預覽
 ```bash

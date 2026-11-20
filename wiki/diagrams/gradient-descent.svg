@@ -1,0 +1,30 @@
+<svg viewBox="0 0 680 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="梯度下降：學習率 0.1 與 1.1 的比較">
+  <defs>
+    <marker id="h-gd-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-sage"/></marker>
+    <marker id="h-gd-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker>
+  </defs>
+  <text x="70" y="40" class="d-sub">損失 (w − 3)²</text>
+  <line x1="50" y1="310" x2="615" y2="310" class="d-line"/>
+  <text x="622" y="314" class="d-sub">w</text>
+  <polyline class="d-line" points="60,60 90,105.6 120,146.4 150,182.4 180,213.6 210,240 240,261.6 270,278.4 300,290.4 330,297.6 360,300 390,297.6 420,290.4 450,278.4 480,261.6 510,240 540,213.6 570,182.4 600,146.4"/>
+  <line x1="360" y1="304" x2="360" y2="316" class="d-line"/>
+  <text x="360" y="336" text-anchor="middle" class="d-sub">谷底 w = 3（損失 0）</text>
+  <line x1="180" y1="213.6" x2="570" y2="176.2" class="d-line-rose d-dash" marker-end="url(#h-gd-r)"/>
+  <line x1="576" y1="175.6" x2="107" y2="121.6" class="d-line-rose d-dash" marker-end="url(#h-gd-r)"/>
+  <circle cx="576" cy="175.6" r="6" class="d-dot-rose"/>
+  <circle cx="100.8" cy="120.9" r="6" class="d-dot-rose"/>
+  <text x="590" y="200" class="d-sub">w = 6.6</text>
+  <text x="88" y="142" text-anchor="end" class="d-sub">w = −1.32</text>
+  <line x1="180" y1="213.6" x2="211" y2="240.4" class="d-line-sage" marker-end="url(#h-gd-s)"/>
+  <line x1="216" y1="244.7" x2="240" y2="261.2" class="d-line-sage" marker-end="url(#h-gd-s)"/>
+  <line x1="244.8" y1="264.6" x2="263" y2="274.6" class="d-line-sage" marker-end="url(#h-gd-s)"/>
+  <circle cx="216" cy="244.7" r="5" class="d-dot-sage"/>
+  <circle cx="244.8" cy="264.6" r="5" class="d-dot-sage"/>
+  <circle cx="267.8" cy="277.3" r="5" class="d-dot-sage"/>
+  <circle cx="180" cy="213.6" r="7" class="d-gray"/>
+  <text x="105" y="242" class="d-sub">起點 w = 0</text>
+  <circle cx="405" cy="50" r="6" class="d-dot-sage"/>
+  <text x="418" y="50" dominant-baseline="central" class="d-sub">學習率 0.1：穩穩往谷底走</text>
+  <circle cx="405" cy="78" r="6" class="d-dot-rose"/>
+  <text x="418" y="78" dominant-baseline="central" class="d-sub">學習率 1.1：跳過谷底，越跳越高</text>
+</svg>

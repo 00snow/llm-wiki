@@ -1,0 +1,100 @@
+<svg viewBox="0 0 680 345" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="用 3×3 卷積核在 5×5 圖片上找邊緣">
+  <defs><marker id="h-cv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker></defs>
+  <text x="115" y="62" text-anchor="middle" class="d-b">輸入圖片 5×5</text>
+  <rect x="40" y="80" width="30" height="30" class="d-ink"/>
+  <text x="55" y="95" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="70" y="80" width="30" height="30" class="d-ink"/>
+  <text x="85" y="95" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="100" y="80" width="30" height="30" class="d-box"/>
+  <text x="115" y="95" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="130" y="80" width="30" height="30" class="d-box"/>
+  <text x="145" y="95" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="160" y="80" width="30" height="30" class="d-box"/>
+  <text x="175" y="95" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="40" y="110" width="30" height="30" class="d-ink"/>
+  <text x="55" y="125" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="70" y="110" width="30" height="30" class="d-ink"/>
+  <text x="85" y="125" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="100" y="110" width="30" height="30" class="d-box"/>
+  <text x="115" y="125" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="130" y="110" width="30" height="30" class="d-box"/>
+  <text x="145" y="125" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="160" y="110" width="30" height="30" class="d-box"/>
+  <text x="175" y="125" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="40" y="140" width="30" height="30" class="d-ink"/>
+  <text x="55" y="155" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="70" y="140" width="30" height="30" class="d-ink"/>
+  <text x="85" y="155" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="100" y="140" width="30" height="30" class="d-box"/>
+  <text x="115" y="155" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="130" y="140" width="30" height="30" class="d-box"/>
+  <text x="145" y="155" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="160" y="140" width="30" height="30" class="d-box"/>
+  <text x="175" y="155" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="40" y="170" width="30" height="30" class="d-ink"/>
+  <text x="55" y="185" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="70" y="170" width="30" height="30" class="d-ink"/>
+  <text x="85" y="185" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="100" y="170" width="30" height="30" class="d-box"/>
+  <text x="115" y="185" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="130" y="170" width="30" height="30" class="d-box"/>
+  <text x="145" y="185" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="160" y="170" width="30" height="30" class="d-box"/>
+  <text x="175" y="185" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="40" y="200" width="30" height="30" class="d-ink"/>
+  <text x="55" y="215" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="70" y="200" width="30" height="30" class="d-ink"/>
+  <text x="85" y="215" text-anchor="middle" dominant-baseline="central" class="d-t-inv">0</text>
+  <rect x="100" y="200" width="30" height="30" class="d-box"/>
+  <text x="115" y="215" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="130" y="200" width="30" height="30" class="d-box"/>
+  <text x="145" y="215" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="160" y="200" width="30" height="30" class="d-box"/>
+  <text x="175" y="215" text-anchor="middle" dominant-baseline="central">9</text>
+  <rect x="40" y="80" width="90" height="90" class="d-win"/>
+  <text x="40" y="252" class="d-sub">0 = 黑、9 = 白；粉框 = 卷積核目前的位置</text>
+  <text x="225" y="155" text-anchor="middle" dominant-baseline="central" class="d-b">×</text>
+  <text x="305" y="98" text-anchor="middle" class="d-b">卷積核 3×3</text>
+  <rect x="260" y="110" width="30" height="30" class="d-butter"/>
+  <text x="275" y="125" text-anchor="middle" dominant-baseline="central">−1</text>
+  <rect x="290" y="110" width="30" height="30" class="d-butter"/>
+  <text x="305" y="125" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="320" y="110" width="30" height="30" class="d-butter"/>
+  <text x="335" y="125" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="260" y="140" width="30" height="30" class="d-butter"/>
+  <text x="275" y="155" text-anchor="middle" dominant-baseline="central">−1</text>
+  <rect x="290" y="140" width="30" height="30" class="d-butter"/>
+  <text x="305" y="155" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="320" y="140" width="30" height="30" class="d-butter"/>
+  <text x="335" y="155" text-anchor="middle" dominant-baseline="central">1</text>
+  <rect x="260" y="170" width="30" height="30" class="d-butter"/>
+  <text x="275" y="185" text-anchor="middle" dominant-baseline="central">−1</text>
+  <rect x="290" y="170" width="30" height="30" class="d-butter"/>
+  <text x="305" y="185" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="320" y="170" width="30" height="30" class="d-butter"/>
+  <text x="335" y="185" text-anchor="middle" dominant-baseline="central">1</text>
+  <line x1="360" y1="155" x2="438" y2="155" class="d-line" marker-end="url(#h-cv)"/>
+  <text x="399" y="142" text-anchor="middle" class="d-sub">相乘再加總</text>
+  <text x="495" y="98" text-anchor="middle" class="d-b">輸出 3×3</text>
+  <rect x="450" y="110" width="30" height="30" class="d-rose"/>
+  <text x="465" y="125" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="480" y="110" width="30" height="30" class="d-box"/>
+  <text x="495" y="125" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="510" y="110" width="30" height="30" class="d-box"/>
+  <text x="525" y="125" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="450" y="140" width="30" height="30" class="d-box"/>
+  <text x="465" y="155" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="480" y="140" width="30" height="30" class="d-box"/>
+  <text x="495" y="155" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="510" y="140" width="30" height="30" class="d-box"/>
+  <text x="525" y="155" text-anchor="middle" dominant-baseline="central">0</text>
+  <rect x="450" y="170" width="30" height="30" class="d-box"/>
+  <text x="465" y="185" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="480" y="170" width="30" height="30" class="d-box"/>
+  <text x="495" y="185" text-anchor="middle" dominant-baseline="central">27</text>
+  <rect x="510" y="170" width="30" height="30" class="d-box"/>
+  <text x="525" y="185" text-anchor="middle" dominant-baseline="central">0</text>
+  <text x="40" y="285">框在左上角：(−1×0 + 0×0 + 1×9) × 3 列 = <tspan class="d-b d-t-rose">27</tspan></text>
+  <text x="40" y="310">移到最右邊：(−1×9 + 0×9 + 1×9) × 3 列 = <tspan class="d-b">0</tspan></text>
+  <text x="40" y="335" class="d-sub">黑白交界的地方數值大（27），整片白色的地方是 0 → 卷積核找到了邊緣</text>
+</svg>

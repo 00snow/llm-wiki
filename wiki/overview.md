@@ -1,7 +1,7 @@
 ---
 title: AI 入門講解 Wiki
 type: overview
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # AI 入門講解 Wiki
@@ -30,6 +30,10 @@ updated: 2026-11-17
 | 原始資料 | `raw/`：從維基百科、Stanford CS231n、Google 機器學習速成課程剪輯的重點 | 人挑選，AI 不修改 |
 | 知識庫 | `wiki/`：你正在看的這些頁面 | AI 整理、互相連結 |
 | 規則 | `AGENTS.md` | 人和 AI 一起改 |
+
+### 網站是怎麼運作的
+
+![網站沒有後端：瀏覽器下載文字檔後，由 app.js 組裝成你看到的頁面](diagrams/site-flow.svg)
 
 所有數字和公式都追得回 `raw/` 裡的來源；還沒有來源的內容會標「（待查證）」。
 想看 AI 做了哪些更新，請看 [[log|維護紀錄]]。

@@ -225,6 +225,36 @@ a.wikilink:hover { background: var(--rose-soft); border-radius: 4px; }
 .backlinks h2::before { display: none; }
 .backlinks ul { margin: 0; padding-left: 1.2em; }
 
+/* ---------- diagrams（wiki/diagrams/*.svg，只用 d- 開頭的 class 上色） ---------- */
+.diagram {
+  margin: 1.6em 0; padding: 22px 20px 16px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.diagram svg { display: block; width: 100%; height: auto; }
+.diagram figcaption { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 12px; line-height: 1.6; }
+.diagram text { font-family: var(--font); font-size: 14px; letter-spacing: 0; fill: var(--text); }
+.diagram .d-sub { font-size: 12px; fill: var(--muted); }
+.diagram .d-b { font-weight: 700; }
+.diagram .d-t-rose { fill: var(--rose); }
+.diagram .d-t-sage { fill: var(--sage); }
+.diagram .d-t-inv { fill: var(--surface); }
+.diagram .d-box { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+.diagram .d-gray { fill: var(--sidebar); stroke: var(--line); stroke-width: 1; }
+.diagram .d-rose { fill: var(--rose-tint); stroke: var(--rose); stroke-width: 1; }
+.diagram .d-sage { fill: var(--sage-soft); stroke: var(--sage); stroke-width: 1; }
+.diagram .d-butter { fill: var(--butter); stroke: var(--butter-text); stroke-width: 1; }
+.diagram .d-ink { fill: var(--text); stroke: var(--line); stroke-width: 1; }
+.diagram .d-dot-rose { fill: var(--rose); }
+.diagram .d-dot-sage { fill: var(--sage); }
+.diagram .d-line { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.diagram .d-line-rose { fill: none; stroke: var(--rose); stroke-width: 2; }
+.diagram .d-line-sage { fill: none; stroke: var(--sage); stroke-width: 2; }
+.diagram .d-dash { stroke-dasharray: 6 5; }
+.diagram .d-win { fill: none; stroke: var(--rose); stroke-width: 3; }
+.diagram .d-head { fill: var(--muted); }
+.diagram .d-head-rose { fill: var(--rose); }
+.diagram .d-head-sage { fill: var(--sage); }
+
 /* ---------- home ---------- */
 .hero {
   padding: 40px 40px 36px; border-radius: 28px; margin-bottom: 2.4em;
@@ -279,4 +309,6 @@ a.wikilink:hover { background: var(--rose-soft); border-radius: 4px; }
   .article h1 { font-size: 1.65rem; }
   .pager { grid-template-columns: 1fr; }
   .pager .next { grid-column: 1; }
+  .diagram { padding: 16px 12px 12px; overflow-x: auto; }
+  .diagram svg { min-width: 520px; }
 }

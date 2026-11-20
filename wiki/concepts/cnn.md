@@ -3,7 +3,7 @@ title: 卷積神經網路（Convolutional Neural Network, CNN）
 type: concept
 tags: [影像, 基礎]
 sources: 3
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 卷積神經網路（Convolutional Neural Network, CNN）
@@ -94,13 +94,7 @@ CNN 也是這樣，一層一層從「小特徵」組合成「大概念」。前�
 
 最常見的是 2×2、步幅 2：每個 2×2 方格**只留最大的數字**。
 
-```
-1 3 | 2 1
-5 6 | 1 0        6 | 2
-----+----   →   ---+---
-2 0 | 3 4        2 | 8
-1 1 | 8 2
-```
+![同一個顏色的 2×2 方格只留最大值（粗體）](diagrams/max-pooling.svg)
 
 寬高都減半，丟掉 75% 的數值，但留下最明顯的特徵。
 

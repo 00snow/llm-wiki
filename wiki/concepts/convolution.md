@@ -3,7 +3,7 @@ title: 什麼是卷積（Convolution）
 type: concept
 tags: [數學, 影像]
 sources: 1
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 什麼是卷積（Convolution）
@@ -110,6 +110,8 @@ updated: 2026-11-17
 ```
 
 窗口跨在黑白交界上時數值很大（27），整片都是白色時是 0。**卷積核成功找到了邊緣！**
+
+![卷積核在圖片上滑動，每個位置「相乘再加總」得到輸出的一格](diagrams/convolution.svg)
 
 ## 常見誤會
 

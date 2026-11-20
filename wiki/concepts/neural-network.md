@@ -3,7 +3,7 @@ title: 神經網路（Neural Network, NN）
 type: concept
 tags: [基礎]
 sources: 2
-updated: 2026-11-17
+updated: 2026-11-20
 ---
 
 # 神經網路（Neural Network, NN）
@@ -65,6 +65,8 @@ updated: 2026-11-17
 ## 動手算一次
 
 ### 算一個神經元
+
+![一個神經元：先加權加總、加上偏差，再經過 ReLU](diagrams/neuron.svg)
 
 輸入 x = (2, 3)，權重 w = (0.5, −1)，偏差 b = 1，激勵函數用 ReLU：
 

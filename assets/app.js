@@ -152,11 +152,27 @@
     return `<article class="article"><div class="eyebrow">${eyebrow}</div>${html}${pager(p)}${backHtml}</article>`;
   }
 
+  /* ---------- diagrams：把 ![說明](diagrams/x.svg) 換成內嵌 SVG，才能吃到 CSS 變數與深色模式 ---------- */
+  async function inlineDiagrams(root) {
+    for (const img of [...root.querySelectorAll('img[src$=".svg"]')]) {
+      const src = img.getAttribute("src");
+      if (/^(https?:)?\/\//.test(src) || src.startsWith("/")) continue;
+      try {
+        const fig = document.createElement("figure");
+        fig.className = "diagram";
+        fig.innerHTML = (await load(src)) + (img.alt ? `<figcaption>${esc(img.alt)}</figcaption>` : "");
+        const p = img.parentElement;
+        (p.tagName === "P" && p.childNodes.length === 1 ? p : img).replaceWith(fig);
+      } catch (e) { console.warn("無法載入圖", src, e); }
+    }
+  }
+
   async function route() {
     const slug = current();
     const main = $("#content");
     try {
       main.innerHTML = slug === "home" ? await viewHome() : FIXED[slug] ? await viewFixed(slug) : await viewPage(slug);
+      await inlineDiagrams(main);
       const p = state.bySlug.get(slug);
       document.title = (p ? p.short + " · " : FIXED_TITLE[slug] && slug !== "home" ? FIXED_TITLE[slug] + " · " : "") + "AI 入門講解 Wiki";
     } catch (e) {
