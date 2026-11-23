@@ -47,6 +47,13 @@ RAG 每次提問都重新從原始文件找答案；LLM Wiki 則是讓 AI **事�
 ├── assets/
 │   ├── style.css          ← 韓系風樣式
 │   └── app.js             ← 讀 wiki/index.md、渲染 Markdown、[[連結]]、嵌入 SVG 圖、反向連結、搜尋
+├── slides/                ← 用 wiki 產生的教學簡報（見 7.4）
+│   ├── index.html         ← 產出的簡報（不要手改）
+│   ├── outline.json       ← 大綱（LLM 寫的，唯一要手改的內容檔）
+│   ├── graph.svg          ← 流程圖
+│   ├── WORKFLOW.md        ← 流程設計與反思
+│   ├── pipeline/          ← query_wiki.py、check_outline.py、build_slides.py、rules.json、template.html
+│   └── build/             ← 自動產生：context.md / context.json、check_report.md、check_history.jsonl
 ├── raw/                   ← 原始資料（不可修改）
 │   ├── assets/            ← 原始資料用到的圖片
 │   └── YYYY-MM-DD-來源-主題.md
@@ -235,6 +242,19 @@ updated: 2026-11-17
 - 值得補充的資料缺口（建議使用者可以找什麼來源）
 
 完成後在 log 記一筆 `lint`。
+
+### 7.4 Slides（產生教學簡報）—— 使用者說「用 wiki 做簡報」或「更新簡報」
+流程圖見 `slides/graph.svg`，設計理由見 `slides/WORKFLOW.md`。
+1. **B 查詢**：`python slides/pipeline/query_wiki.py` → 讀 `slides/build/context.md`（資料包，最上面是規則與字數上限）。
+2. **C 整理**：只根據資料包改 `slides/outline.json`。每張都要有 `sources`；新術語寫進 `defines`；封面、路線圖標 `preview`。
+3. **D 檢查**：`python slides/pipeline/check_outline.py --round-note "這輪改了什麼"`。
+   - 有錯 → 依錯誤碼退回：多數退回 C，**只重寫錯的那幾張**；`UNVERIFIED` 退回 7.1 先收錄來源再重跑 B。
+   - 最多 3 輪；還不通過就停下來跟使用者說明。
+4. **E 產生**：`python slides/pipeline/build_slides.py` → `slides/index.html`。
+5. **F 版面**：本機預覽 `/slides/`，在主控台跑 `__checkLayout()` 要回傳 `[]`；桌機 1280×760 與手機 375 寬逐張看過。
+   樣式問題改 `slides/pipeline/template.html` 重跑 E；內容問題（例如圖文不符）退回 C。
+6. 同一種錯誤反覆出現時，把它變成 `rules.json` 的提示（往前移到 B）或 `check_outline.py` 的新規則（從 F 移到 D），並在 `WORKFLOW.md` 記下原因。
+7. 在 `wiki/log.md` 記一筆 `query`（簡報是對 wiki 的一次提問）。
 
 ---
 

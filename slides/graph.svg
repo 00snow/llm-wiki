@@ -1,0 +1,66 @@
+<svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
+  <defs>
+    <marker id="h-gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
+    <marker id="h-gr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker>
+  </defs>
+
+  <!-- 退回 A：待查證 -->
+  <path d="M 612 96 C 612 6, 80 6, 80 96" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
+  <text x="346" y="26" text-anchor="middle" class="d-sub d-t-rose">UNVERIFIED：Wiki 標著待查證 → 回 A 先收錄來源</text>
+  <!-- 退回 C：內容錯 -->
+  <path d="M 568 96 C 548 56, 468 56, 448 96" class="d-line-rose" marker-end="url(#h-gr-r)"/>
+  <text x="508" y="58" text-anchor="middle" class="d-sub d-t-rose">只重寫錯的那幾張</text>
+
+  <!-- 第一列 -->
+  <rect x="20" y="96" width="120" height="52" rx="14" class="d-box"/>
+  <text x="80" y="117" text-anchor="middle" class="d-b">A 取得資料</text>
+  <text x="80" y="136" text-anchor="middle" class="d-sub">ingest → raw/</text>
+
+  <rect x="190" y="96" width="120" height="52" rx="14" class="d-box"/>
+  <text x="250" y="117" text-anchor="middle" class="d-b">B 查詢 Wiki</text>
+  <text x="250" y="136" text-anchor="middle" class="d-sub">query_wiki.py</text>
+
+  <rect x="360" y="96" width="120" height="52" rx="14" class="d-rose"/>
+  <text x="420" y="117" text-anchor="middle" class="d-b">C 整理重點</text>
+  <text x="420" y="136" text-anchor="middle" class="d-sub">LLM 寫 outline</text>
+
+  <rect x="530" y="96" width="130" height="52" rx="14" class="d-sage"/>
+  <text x="595" y="117" text-anchor="middle" class="d-b">D 內容檢查</text>
+  <text x="595" y="136" text-anchor="middle" class="d-sub">check_outline.py</text>
+
+  <line x1="140" y1="122" x2="188" y2="122" class="d-line" marker-end="url(#h-gr)"/>
+  <line x1="310" y1="122" x2="358" y2="122" class="d-line" marker-end="url(#h-gr)"/>
+  <line x1="480" y1="122" x2="528" y2="122" class="d-line" marker-end="url(#h-gr)"/>
+
+  <!-- B 的規則包 -->
+  <rect x="180" y="172" width="140" height="44" rx="12" class="d-butter"/>
+  <text x="250" y="190" text-anchor="middle" class="d-sub">rules.json（v2）</text>
+  <text x="250" y="207" text-anchor="middle" class="d-sub">限制先寫進資料包</text>
+  <line x1="250" y1="172" x2="250" y2="150" class="d-line d-dash" marker-end="url(#h-gr)"/>
+
+  <!-- 第二列 -->
+  <line x1="595" y1="148" x2="595" y2="234" class="d-line" marker-end="url(#h-gr)"/>
+  <text x="603" y="196" class="d-sub">0 錯誤</text>
+
+  <rect x="530" y="236" width="130" height="52" rx="14" class="d-box"/>
+  <text x="595" y="257" text-anchor="middle" class="d-b">E 產生簡報</text>
+  <text x="595" y="276" text-anchor="middle" class="d-sub">build_slides.py</text>
+
+  <rect x="360" y="236" width="120" height="52" rx="14" class="d-sage"/>
+  <text x="420" y="257" text-anchor="middle" class="d-b">F 版面檢查</text>
+  <text x="420" y="276" text-anchor="middle" class="d-sub">瀏覽器＋截圖</text>
+
+  <rect x="20" y="236" width="120" height="52" rx="14" class="d-gray"/>
+  <text x="80" y="267" text-anchor="middle" class="d-b">完成</text>
+
+  <line x1="530" y1="262" x2="482" y2="262" class="d-line" marker-end="url(#h-gr)"/>
+  <line x1="360" y1="262" x2="142" y2="262" class="d-line" marker-end="url(#h-gr)"/>
+  <text x="250" y="254" text-anchor="middle" class="d-sub">桌機＋手機都通過</text>
+
+  <!-- F 的退回 -->
+  <line x1="420" y1="236" x2="420" y2="150" class="d-line-rose" marker-end="url(#h-gr-r)"/>
+  <text x="428" y="196" class="d-sub d-t-rose">內容問題</text>
+  <text x="428" y="211" class="d-sub d-t-rose">→ 回 C</text>
+  <path d="M 450 290 C 470 306, 540 306, 560 290" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
+  <text x="505" y="304" text-anchor="middle" class="d-sub d-t-rose">樣式問題 → 改模板</text>
+</svg>

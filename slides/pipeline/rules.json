@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "limits": {
+    "title": 20,
+    "lead": 48,
+    "item": 40,
+    "cell": 24,
+    "max_items": 5,
+    "roadmap_items": 8,
+    "max_rows": 5,
+    "slide_total": 220
+  },
+  "prompt_rules": [
+    "只用這份資料包裡的內容；每張投影片在 sources 寫上它根據的 wiki slug。",
+    "讀者第一次接觸 AI：先比喻、再原理、最後動手算。",
+    "【v2 新增，從檢查節點往前移】字數上限：標題 {title} 字、引言 {lead} 字、每條 {item} 字、每張最多 {max_items} 條、整張 {slide_total} 字。寫完每條先數字數。",
+    "【v2 新增】術語要先在 defines 解釋才能在後面使用；封面、路線圖這種預告頁要標 preview。",
+    "【v2 新增】一張投影片只講一個例子：講解圖和算式必須來自 wiki 同一段。"
+  ]
+}

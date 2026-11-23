@@ -1,7 +1,7 @@
 ---
 title: AI 入門講解 Wiki
 type: overview
-updated: 2026-11-20
+updated: 2026-11-23
 ---
 
 # AI 入門講解 Wiki
@@ -20,6 +20,10 @@ updated: 2026-11-20
          │                           └─ 斜率怎麼算？ → 反向傳播
          └─ 怎麼讓它看懂圖片？   → 卷積 → CNN
 ```
+
+## 教學簡報
+
+想直接拿來上課？這份 wiki 也自動產生了一份 28 張的簡報：[電腦是怎麼學會的？](slides/)（怎麼做出來的見 `slides/WORKFLOW.md`）。
 
 ## 關於這個網站
 

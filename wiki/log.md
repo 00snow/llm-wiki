@@ -2,6 +2,13 @@
 
 > 新的紀錄寫在最上面，不刪舊紀錄。查最近 5 筆：`grep "^## \[" wiki/log.md | head -5`
 
+## [2026-11-23] query | 用 wiki 產生教學簡報「電腦是怎麼學會的？」
+- 起因：作業要求以 wiki 為知識來源做一份教學 HTML 簡報，並說明 loop / graph
+- 新增：`slides/`（28 張投影片、產生流程 A→F、檢查腳本），規則寫進 `AGENTS.md` 7.4
+- 內容全部來自 7 個概念頁，數字由 `check_outline.py` 逐一比對；沒有用到標著待查證的「交叉熵」
+- 檢查跑了 6 輪，紀錄在 `slides/build/check_report.md`；反思寫在 `slides/WORKFLOW.md`
+- 沒有新增事實，不需要新的 raw
+
 ## [2026-11-20] update | 「動手算一次」加上講解圖
 - 起因：讀者希望「用圖看懂怎麼算」
 - 新增 `wiki/diagrams/` 7 張 SVG：[[neural-network]]（一個神經元）、[[loss-function]]（MAE vs MSE）、[[optimization]]（學習率 0.1 vs 1.1）、[[backpropagation]]（正向 / 反向）、[[convolution]]（找邊緣）、[[cnn]]（最大池化）、[[home|首頁]]（網站運作原理）

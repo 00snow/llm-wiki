@@ -31,5 +31,6 @@ python -m http.server 8000
 - 收錄新資料：「幫我找反向傳播的資料收進 wiki」或「收錄 raw/xxx.md」
 - 提問：「MSE 和 MAE 什麼時候該用哪個？」——好的回答可以存回 wiki
 - 健康檢查：「檢查 wiki」
+- 產生教學簡報：「用 wiki 做簡報」——流程見 `AGENTS.md` 7.4，成果在 [`slides/`](slides/)，設計與反思在 [`slides/WORKFLOW.md`](slides/WORKFLOW.md)
 
 AI 會依 `AGENTS.md` 的規則建立頁面、更新 `wiki/index.md`，並在 `wiki/log.md` 留紀錄。
