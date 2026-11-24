@@ -589,18 +589,19 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 <div class="frame"><p class="eyebrow">總整理</p><div class="body"><h2>最後一題</h2><p class="question">從 w = 0 出發、學習率設 1.1，損失會怎樣？</p><div class="opts"><button class="opt" data-ok="0"><b>A</b>慢慢變小，最後到谷底</button><button class="opt" data-ok="1"><b>B</b>在谷底兩邊越跳越遠，損失越來越大</button><button class="opt" data-ok="0"><b>C</b>完全不動</button></div><p class="explain">w 從 0 跳到 6.6 再到 −1.32，損失從 9 變 12.96 再變 18.66。學習率要剛剛好。</p></div>
 <footer><span class="srcs">來源 <a class="src" href="../#/optimization" target="_blank" rel="noopener">最佳化與梯度下降</a></span><span class="pg">25 / 28</span></footer></div></section>
 <section class="slide layout-bullets" id="s26" data-id="meta-graph" aria-label="第 26 張，共 28 張">
-<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>這份簡報是怎麼做出來的</h2><p class="lead">六個節點，只有 C 交給 LLM，其他都是腳本。</p><div class="blist with-fig fig-wide"><ul><li>D、F 是檢查：不通過就退回</li><li>每個錯誤都寫明要退回哪個節點</li><li>只重寫錯的那幾張，最多 3 輪</li><li>數字要追得回 Wiki，Wiki 再追回 raw</li></ul><figure class="diagram"><svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
+<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>這份簡報是怎麼做出來的</h2><p class="lead">六個節點，只有 C 交給 LLM，其他都是腳本。</p><div class="blist with-fig fig-wide"><ul><li>D、F 是檢查：不通過就退回</li><li>每個錯誤都寫明要退回哪個節點</li><li>只重寫錯的那幾張，最多 3 輪</li><li>數字要追得回 Wiki，Wiki 再追回 raw</li></ul><figure class="diagram"><svg viewBox="0 0 680 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
   <defs>
     <marker id="h-gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
     <marker id="h-gr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker>
   </defs>
+  <g transform="translate(0,20)">
 
   <!-- 退回 A：待查證 -->
-  <path d="M 612 96 C 612 6, 80 6, 80 96" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
-  <text x="346" y="26" text-anchor="middle" class="d-sub d-t-rose">UNVERIFIED：Wiki 標著待查證 → 回 A 先收錄來源</text>
+  <path d="M 640 96 C 640 -20, 80 -20, 80 96" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
+  <text x="360" y="-4" text-anchor="middle" class="d-sub d-t-rose">UNVERIFIED：Wiki 標著待查證 → 回 A 先收錄來源</text>
   <!-- 退回 C：內容錯 -->
-  <path d="M 568 96 C 548 56, 468 56, 448 96" class="d-line-rose" marker-end="url(#h-gr-r)"/>
-  <text x="508" y="58" text-anchor="middle" class="d-sub d-t-rose">只重寫錯的那幾張</text>
+  <path d="M 560 96 C 545 50, 463 50, 448 96" class="d-line-rose" marker-end="url(#h-gr-r)"/>
+  <text x="504" y="52" text-anchor="middle" class="d-sub d-t-rose">只重寫錯的那幾張</text>
 
   <!-- 第一列 -->
   <rect x="20" y="96" width="120" height="52" rx="14" class="d-box"/>
@@ -652,8 +653,9 @@ td:first-child { font-weight: 700; white-space: nowrap; }
   <line x1="420" y1="236" x2="420" y2="150" class="d-line-rose" marker-end="url(#h-gr-r)"/>
   <text x="428" y="196" class="d-sub d-t-rose">內容問題</text>
   <text x="428" y="211" class="d-sub d-t-rose">→ 回 C</text>
-  <path d="M 450 290 C 470 306, 540 306, 560 290" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
-  <text x="505" y="304" text-anchor="middle" class="d-sub d-t-rose">樣式問題 → 改模板</text>
+  <path d="M 450 290 C 470 314, 540 314, 560 290" class="d-line-rose d-dash" marker-end="url(#h-gr-r)"/>
+  <text x="505" y="326" text-anchor="middle" class="d-sub d-t-rose">樣式問題 → 改模板</text>
+  </g>
 </svg></figure></div></div>
 <footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">26 / 28</span></footer></div><aside class="notes"><b>講者備註</b>C 整理重點是唯一的 LLM 節點；LLM 擅長改寫和比喻，不擅長數字數、算算術，這些交給 D 的腳本檢查。</aside></section>
 <section class="slide layout-table" id="s27" data-id="meta-loop" aria-label="第 27 張，共 28 張">
