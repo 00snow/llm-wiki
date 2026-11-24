@@ -589,7 +589,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 <div class="frame"><p class="eyebrow">總整理</p><div class="body"><h2>最後一題</h2><p class="question">從 w = 0 出發、學習率設 1.1，損失會怎樣？</p><div class="opts"><button class="opt" data-ok="0"><b>A</b>慢慢變小，最後到谷底</button><button class="opt" data-ok="1"><b>B</b>在谷底兩邊越跳越遠，損失越來越大</button><button class="opt" data-ok="0"><b>C</b>完全不動</button></div><p class="explain">w 從 0 跳到 6.6 再到 −1.32，損失從 9 變 12.96 再變 18.66。學習率要剛剛好。</p></div>
 <footer><span class="srcs">來源 <a class="src" href="../#/optimization" target="_blank" rel="noopener">最佳化與梯度下降</a></span><span class="pg">25 / 28</span></footer></div></section>
 <section class="slide layout-bullets" id="s26" data-id="meta-graph" aria-label="第 26 張，共 28 張">
-<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>這份簡報是怎麼做出來的</h2><p class="lead">六個節點，只有 C 交給 LLM，其他都是腳本。</p><div class="blist with-fig fig-wide"><ul><li>D、F 是檢查：不通過就退回</li><li>每個錯誤都寫明要退回哪個節點</li><li>只重寫錯的那幾張，最多 3 輪</li><li>數字要追得回 Wiki，Wiki 再追回 raw</li></ul><figure class="diagram"><svg viewBox="0 0 680 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
+<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>這份簡報是怎麼做出來的</h2><p class="lead">一共六步，只有 C 是 AI 在寫，其他都交給程式。</p><div class="blist with-fig fig-wide"><ul><li>D 和 F 負責檢查，沒過就退回去</li><li>每種錯誤都會寫明要退回哪一步</li><li>只重寫錯的那幾張，最多跑 3 輪</li><li>簡報的數字要查得到是 Wiki 哪一頁</li></ul><figure class="diagram"><svg viewBox="0 0 680 356" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
   <defs>
     <marker id="h-gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
     <marker id="h-gr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker>
@@ -657,13 +657,13 @@ td:first-child { font-weight: 700; white-space: nowrap; }
   <text x="505" y="326" text-anchor="middle" class="d-sub d-t-rose">樣式問題 → 改模板</text>
   </g>
 </svg></figure></div></div>
-<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">26 / 28</span></footer></div><aside class="notes"><b>講者備註</b>C 整理重點是唯一的 LLM 節點；LLM 擅長改寫和比喻，不擅長數字數、算算術，這些交給 D 的腳本檢查。</aside></section>
+<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">26 / 28</span></footer></div><aside class="notes"><b>講者備註</b>AI 很會把東西講得好懂，可是數中文字數、算數學、記住哪個術語教過沒，常常會錯。所以這些都交給 D 的程式檢查，結果每次都一樣。</aside></section>
 <section class="slide layout-table" id="s27" data-id="meta-loop" aria-label="第 27 張，共 28 張">
-<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>哪些會重複？哪裡會退回？</h2><table><thead><tr><th>節點</th><th>什麼時候重跑</th><th>不通過時</th></tr></thead><tbody><tr><td>C ⇄ D</td><td>每次改完都重新檢查</td><td>只重寫錯的那幾張</td></tr><tr><td>E → F</td><td>每次產生後</td><td>樣式改模板，內容回 C</td></tr><tr><td>A → B</td><td>缺資料時</td><td>待查證要先收錄來源</td></tr></tbody></table></div>
-<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">27 / 28</span></footer></div><aside class="notes"><b>講者備註</b>C 和 D 是主要的迴圈。D 每次整份檢查，但 C 只改錯的那幾張，避免已經通過的被改壞。</aside></section>
+<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>哪裡會重複？錯了回哪？</h2><table><thead><tr><th>哪兩步</th><th>什麼時候</th><th>沒過怎麼辦</th></tr></thead><tbody><tr><td>C ⇄ D</td><td>每改一次就重查</td><td>只重寫錯的那幾張</td></tr><tr><td>E → F</td><td>每次產生簡報後</td><td>排版改模板，內容回 C</td></tr><tr><td>A → B</td><td>缺資料的時候</td><td>先回去補來源</td></tr></tbody></table></div>
+<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">27 / 28</span></footer></div><aside class="notes"><b>講者備註</b>來回最多的是 C 和 D。D 每次都整份重查，但 C 只改有錯的那幾張，已經過關的不動，免得被 AI 改壞。</aside></section>
 <section class="slide layout-table" id="s28" data-id="meta-reflect" aria-label="第 28 張，共 28 張">
-<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>跑完一次的反思</h2><table><thead><tr><th>問題</th><th>答案</th></tr></thead><tbody><tr><td>最常出錯的節點</td><td>C 整理重點（LLM）</td></tr><tr><td>常見錯誤</td><td>字數超標、術語先用後教</td></tr><tr><td>檢查往前移到</td><td>B：限制直接寫進資料包</td></tr><tr><td>從 F 移到 D</td><td>MISMATCH：圖和算式要同一例</td></tr><tr><td>改了 graph 嗎</td><td>有：B 多了 rules.json</td></tr></tbody></table></div>
-<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">28 / 28</span></footer></div><aside class="notes"><b>講者備註</b>第 1 輪 16 個錯誤，其中 13 個是檢查器誤報；修好檢查器後剩 5 個真錯誤。截圖時又發現第 21 張池化圖配了卷積算式，所以把圖文比對做成 MISMATCH 規則。</aside></section>
+<div class="frame"><p class="eyebrow">幕後</p><div class="body"><h2>跑完一次學到什麼</h2><table><thead><tr><th>問題</th><th>我的發現</th></tr></thead><tbody><tr><td>最常出錯的是</td><td>C，AI 寫大綱那一步</td></tr><tr><td>常見的錯</td><td>字太多、術語還沒教就用</td></tr><tr><td>規則往前放到</td><td>B：先寫進給 AI 的資料包</td></tr><tr><td>從截圖改成自動查</td><td>圖和算式要是同一個例子</td></tr><tr><td>流程圖有改嗎</td><td>有，B 多接一份規則檔</td></tr></tbody></table></div>
+<footer><span class="srcs">來源 <a class="src" href="../slides/WORKFLOW.md">WORKFLOW.md</a></span><span class="pg">28 / 28</span></footer></div><aside class="notes"><b>講者備註</b>第一輪檢查出 16 個錯，結果有 13 個是檢查程式自己誤判，修好之後只剩 5 個真的錯。截圖時又看到池化的圖配上卷積的算式，數字都對所以程式抓不到，後來才加了圖文比對的檢查。</aside></section>
 </main>
 <nav class="ctrl" aria-label="簡報控制">
   <button id="prev" aria-label="上一張">←</button>

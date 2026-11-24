@@ -4,3 +4,4 @@
 {"round": 4, "time": "2026-11-23T23:36:17", "note": "版面檢查退回：第 21 張池化圖配卷積算式，拆成兩張", "rules_version": 1, "slides": 25, "errors": 0, "by_code": {}, "failed_slides": [], "details": []}
 {"round": 5, "time": "2026-11-23T23:39:33", "note": "rules v2：加入 3 張幕後投影片＋MISMATCH 規則", "rules_version": 2, "slides": 28, "errors": 0, "by_code": {}, "failed_slides": [], "details": []}
 {"round": 6, "time": "2026-11-23T23:39:54", "note": "幕後流程圖改成寬版（只改版面欄位）", "rules_version": 2, "slides": 28, "errors": 0, "by_code": {}, "failed_slides": [], "details": []}
+{"round": 7, "time": "2026-11-24T14:46:13", "note": "幕後 3 張改成口語寫法", "rules_version": 2, "slides": 28, "errors": 0, "by_code": {}, "failed_slides": [], "details": []}
