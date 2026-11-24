@@ -27,7 +27,10 @@ def svg(name):
     if not p.exists():
         p = SLIDES / name
     t = p.read_text(encoding="utf-8")
-    return re.sub(r"<\?xml[^>]*\?>", "", t).strip()
+    t = re.sub(r"<\?xml[^>]*\?>", "", t)
+    # SVG 自帶的 <style> 是單獨開啟時用的；嵌進簡報會變成全頁樣式、蓋掉深淺色切換，所以拿掉
+    t = re.sub(r"<!--[^>]*?build_slides[^>]*?-->\s*", "", t)
+    return re.sub(r"<style>.*?</style>\s*", "", t, flags=re.S).strip()
 
 
 def figure(name, caption=""):

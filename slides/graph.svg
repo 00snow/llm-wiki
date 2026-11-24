@@ -1,4 +1,27 @@
 <svg viewBox="0 0 680 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="簡報產生流程圖：六個節點與三條退回路線">
+  <!-- 單獨開啟（例如在 GitHub 上）時用的樣式；嵌進簡報時 build_slides.py 會拿掉，改用簡報的 CSS -->
+  <style>
+    svg { --bg:#faf6f1; --surface:#ffffff; --sidebar:#f5efe8; --text:#3d3833; --muted:#9b928a; --line:#ece4db;
+          --rose:#c97b7b; --rose-tint:#fdf3f1; --sage:#7f9a7a; --sage-soft:#e7eee3; --butter:#fbf0cf; --butter-text:#8a6d1f; }
+    @media (prefers-color-scheme: dark) {
+      svg { --bg:#1f1c1a; --surface:#282422; --sidebar:#1b1917; --text:#ece5de; --muted:#a0968d; --line:#3a3430;
+            --rose:#e6a3a0; --rose-tint:#2f2725; --sage:#a9c2a3; --sage-soft:#2e3a2c; --butter:#3d3523; --butter-text:#e8cf8a; }
+    }
+    text { font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif; font-size: 14px; fill: var(--text); }
+    .d-sub { font-size: 12px; fill: var(--muted); }
+    .d-b { font-weight: 700; }
+    .d-t-rose { fill: var(--rose); }
+    .d-box { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
+    .d-gray { fill: var(--sidebar); stroke: var(--line); stroke-width: 1; }
+    .d-rose { fill: var(--rose-tint); stroke: var(--rose); stroke-width: 1; }
+    .d-sage { fill: var(--sage-soft); stroke: var(--sage); stroke-width: 1; }
+    .d-butter { fill: var(--butter); stroke: var(--butter-text); stroke-width: 1; }
+    .d-line { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+    .d-line-rose { fill: none; stroke: var(--rose); stroke-width: 2; }
+    .d-dash { stroke-dasharray: 6 5; }
+    .d-head { fill: var(--muted); }
+    .d-head-rose { fill: var(--rose); }
+  </style>
   <defs>
     <marker id="h-gr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head"/></marker>
     <marker id="h-gr-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="d-head-rose"/></marker>
